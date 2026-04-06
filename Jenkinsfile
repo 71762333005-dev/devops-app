@@ -34,14 +34,13 @@ pipeline {
                 sh 'docker build -t $IMAGE:$TAG .'
             }
         }
-
-        stage('Push Docker') {
-            steps {
-                withDockerRegistry([credentialsId: 'dockerhub-cred']) {
-                    sh 'docker push $IMAGE:$TAG'
-                }
-            }
+stage('Push Docker') {
+    steps {
+        withDockerRegistry([credentialsId: 'dockerhub-cred', url: 'https://index.docker.io/v1/']) {
+            sh 'docker push $IMAGE:$TAG'
         }
+    }
+}
 
         stage('Update GitOps Repo') {
             steps {
