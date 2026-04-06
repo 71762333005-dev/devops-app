@@ -8,9 +8,7 @@ pipeline {
 
 stage('Checkout') {
     steps {
-        git branch: 'main', 
-            url: 'https://github.com/71762333005-dev/devops-app.git',
-            credentialsId: 'github-cred'
+        git branch: 'main', url: 'https://github.com/71762333005-dev/devops-app.git'
     }
 }
 
