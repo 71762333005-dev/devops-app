@@ -24,7 +24,7 @@ pipeline {
                           -Dsonar.projectName="DevOps App" \
                           -Dsonar.sources=. \
                           -Dsonar.host.url=$SONAR_HOST_URL \
-                          -Dsonar.login=$SONAR_AUTH_TOKEN
+                          -Dsonar.login=squ_c23882818cf94d3d06ff8aaa282db2e2e0b2921b
                     '''
                 }
             }
