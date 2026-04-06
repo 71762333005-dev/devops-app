@@ -6,12 +6,13 @@ pipeline {
         TAG = "${BUILD_NUMBER}"
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/71762333005-dev/devops-app.git'
-            }
-        }
+stage('Checkout') {
+    steps {
+        git branch: 'main', 
+            url: 'https://github.com/71762333005-dev/devops-app.git',
+            credentialsId: 'github-cred'
+    }
+}
 
         stage('SonarQube Scan') {
             steps {
